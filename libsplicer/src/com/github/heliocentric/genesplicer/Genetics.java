@@ -8,9 +8,6 @@ package com.github.heliocentric.genesplicer;
  *
  * @author helio
  */
-public class Splicer {
-    Monster Monsters[];
-    Splicer() {
-        this.Monsters = new Monster[4];
-    }
+public class Genetics {
+    
 }
