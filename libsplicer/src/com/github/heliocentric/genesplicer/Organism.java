@@ -10,7 +10,5 @@ package com.github.heliocentric.genesplicer;
  */
 public class Organism {
     public String UniqueID;
-    public int HP;
-    public int MaxHP;
     public Genome Genes;
 }
