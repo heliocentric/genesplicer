@@ -8,6 +8,6 @@ package com.github.heliocentric.genesplicer;
  *
  * @author helio
  */
-public class Genetics {
+public class Gene {
     
 }

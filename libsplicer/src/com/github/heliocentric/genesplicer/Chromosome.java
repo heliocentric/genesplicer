@@ -8,11 +8,9 @@ package com.github.heliocentric.genesplicer;
  *
  * @author helio
  */
-public class Monster {
-    public String UniqueID;
-    public int HP;
-    public int MaxHP;
-    public Genetics Genes;
-    public Genetics Mother;
-    public Genetics Father;
+public class Chromosome {
+    public Gene[] Genes;
+    public Chromosome() {
+        this.Genes = new Gene[10];
+    }
 }
