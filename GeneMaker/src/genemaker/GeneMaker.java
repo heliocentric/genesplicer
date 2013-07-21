@@ -4,6 +4,7 @@
  */
 package genemaker;
 
+
 /**
  *
  * @author helio
@@ -15,5 +16,7 @@ public class GeneMaker {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Editor window = new Editor();
+        window.setVisible(true);
     }
 }
