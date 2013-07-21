@@ -40,6 +40,7 @@ public class Editor extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Genome Editor");
 
         jMenu1.setText("File");
 
