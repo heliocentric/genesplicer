@@ -1,8 +1,33 @@
 <genome>
+	<info type="boilerplate">
+		<name>
+			Telxir
+		</name>
+	</info>
 	<primary>
-
+		<chromosome id=1 description="Sex (M)">
+			<allele>
+				<gene>
+				</gene>
+				<gene>
+				</gene>
+			</allele>
+		</chromosome>
+		<chromosome id=1 description="Sex (F)">
+		</chromosome>
+		<chromosome id=2 description="Appearance">
+		</chromosome>
+		<chromosome id=3 description="Brain">
+		</chromosome>
+		<chromosome id=4>
+		</chromosome>
 	</primary>
 	<mitochondrial>
-
+		<chromosome id=1>
+		</chromosome>
+		<chromosome id=2>
+		</chromosome>
+		<chromosome id=3>
+		</chromosome>
 	</mitochondrial>
 </genome>
