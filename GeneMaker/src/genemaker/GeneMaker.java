@@ -19,4 +19,7 @@ public class GeneMaker {
         Editor window = new Editor();
         window.setVisible(true);
     }
+	public static void Exit() {
+		System.exit(0);
+	}
 }

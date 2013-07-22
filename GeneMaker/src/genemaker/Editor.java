@@ -4,6 +4,8 @@
  */
 package genemaker;
 
+import com.github.heliocentric.genesplicer.Genome;
+
 /**
  *
  * @author helio
@@ -15,8 +17,9 @@ public class Editor extends javax.swing.JFrame {
      */
     public Editor() {
         initComponents();
+		this.Genome = new Genome();
     }
-
+	public Genome Genome;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,57 +51,30 @@ public class Editor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Genome Editor");
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Main");
-        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Primary Genome");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 1");
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Genomes");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Primary");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("1 Sex (Both)");
         treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 2");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("1 Sex (Male)");
         treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 3");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("2 Appearence");
         treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 4");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("3 Brain");
         treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 5");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 6");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 7");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 8");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 9");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 10");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 11");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 12-X");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 12-Y");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("4");
         treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Mitochondrial Genome");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 1");
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Mitochondria");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("1");
         treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 2");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("2");
         treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 3");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 4");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 5");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Chromosome 6");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("3");
         treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
         treeGenome.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane2.setViewportView(treeGenome);
 
-        lstAllele.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane3.setViewportView(lstAllele);
 
         jToolBar1.setRollover(true);
@@ -106,6 +82,11 @@ public class Editor extends javax.swing.JFrame {
         mnuFile.setText("File");
 
         mnuNew.setText("New Genome");
+        mnuNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuNewActionPerformed(evt);
+            }
+        });
         mnuFile.add(mnuNew);
 
         mnuClone.setText("Clone Existing");
@@ -126,6 +107,11 @@ public class Editor extends javax.swing.JFrame {
         mnuFile.add(mnuSaveAs);
 
         mnuExit.setText("Exit");
+        mnuExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuExitActionPerformed(evt);
+            }
+        });
         mnuFile.add(mnuExit);
 
         jMenuBar1.add(mnuFile);
@@ -155,7 +141,7 @@ public class Editor extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(400, Short.MAX_VALUE)
+                .addContainerGap(399, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(374, 374, 374))
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -172,12 +158,9 @@ public class Editor extends javax.swing.JFrame {
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(480, 480, 480))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -192,6 +175,16 @@ public class Editor extends javax.swing.JFrame {
     private void mnuSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mnuSaveActionPerformed
+
+    private void mnuNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuNewActionPerformed
+        this.Genome.New();
+    }//GEN-LAST:event_mnuNewActionPerformed
+
+    private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
+		this.setVisible(false);
+		genemaker.GeneMaker.Exit();
+		// TODO add your handling code here:
+    }//GEN-LAST:event_mnuExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +215,7 @@ public class Editor extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+			@Override
             public void run() {
                 new Editor().setVisible(true);
             }

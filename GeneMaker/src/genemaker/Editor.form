@@ -13,6 +13,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="New Genome"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuNewActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuClone">
               <Properties>
@@ -41,6 +44,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuExitActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -97,7 +103,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="400" max="32767" attributes="0"/>
+              <EmptySpace pref="399" max="32767" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="374" max="-2" attributes="0"/>
           </Group>
@@ -117,15 +123,10 @@
               <Component id="jToolBar1" min="-2" pref="25" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jScrollPane3" min="-2" pref="378" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="480" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jScrollPane2" min="-2" pref="881" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jScrollPane2" min="-2" pref="881" max="-2" attributes="0"/>
+                  <Component id="jScrollPane3" min="-2" pref="378" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -145,7 +146,7 @@
         <Component class="javax.swing.JTree" name="treeGenome">
           <Properties>
             <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-              <TreeModel code="Main&#xa; Primary Genome&#xa;  Chromosome 1&#xa;  Chromosome 2&#xa;  Chromosome 3&#xa;  Chromosome 4&#xa;  Chromosome 5&#xa;  Chromosome 6&#xa;  Chromosome 7&#xa;  Chromosome 8&#xa;  Chromosome 9&#xa;  Chromosome 10&#xa;  Chromosome 11&#xa;  Chromosome 12-X&#xa;  Chromosome 12-Y&#xa; Mitochondrial Genome&#xa;  Chromosome 1&#xa;  Chromosome 2&#xa;  Chromosome 3&#xa;  Chromosome 4&#xa;  Chromosome 5&#xa;  Chromosome 6"/>
+              <TreeModel code="Genomes&#xa; Primary&#xa;  1 Sex (Both)&#xa;  1 Sex (Male)&#xa;  2 Appearence&#xa;  3 Brain&#xa;  4&#xa; Mitochondria&#xa;  1&#xa;  2&#xa;  3"/>
             </Property>
           </Properties>
         </Component>
@@ -161,13 +162,7 @@
         <Component class="javax.swing.JList" name="lstAllele">
           <Properties>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-                <StringItem index="4" value="Item 5"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
         </Component>
