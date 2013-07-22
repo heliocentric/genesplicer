@@ -1,0 +1,8 @@
+<genome>
+	<primary>
+
+	</primary>
+	<mitochondrial>
+
+	</mitochondrial>
+</genome>
